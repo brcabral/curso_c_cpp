@@ -5,19 +5,11 @@
 using namespace std;
 
 void imprimeVetor(int vetor[TAM]) {
-    for(int i = 0; i < TAM; i++) {
-        cout << vetor[i];
-        if (i < (TAM - 1)) {
-            cout << " | ";
-        }
-    }
-    cout << "\n";
-}
+    int tamanhoLista = sizeof(vetor)/sizeof(int);
 
-void imprimeVetorTemp(int vetor[TAM], int tamanho) {
-    for(int i = 0; i < tamanho; i++) {
+    for(int i = 0; i <= tamanhoLista; i++) {
         cout << vetor[i];
-        if (i < (tamanho - 1)) {
+        if (i <= (tamanhoLista - 1)) {
             cout << " | ";
         }
     }
@@ -41,7 +33,7 @@ void merge(int vetor[TAM], int indiceEsquerda, int meio, int indiceDireita) {
     }
 
     cout << "Vetor esquerda:  ";
-    imprimeVetorTemp(vetorEsquerda, n1);
+    imprimeVetor(vetorEsquerda);
 
     //Preencher o vetorDireita com os valores do vetor principal.
     for (int i = 0; i < n2; i++) {
@@ -49,7 +41,7 @@ void merge(int vetor[TAM], int indiceEsquerda, int meio, int indiceDireita) {
     }
 
     cout << "Vetor direita:  ";
-    imprimeVetorTemp(vetorDireita, n2);
+    imprimeVetor(vetorDireita);
 
     int i, j = 0;
     int k = indiceEsquerda;
